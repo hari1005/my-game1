@@ -1,0 +1,187 @@
+function preload(){
+  knightArmor=loadAnimation("knight.png")
+  knightAttack=loadAnimation("knightAttack.png")
+  darkBall=loadImage("projectile.png")
+  gob=loadImage("enemy.png")
+  gob2=loadImage("enemy2.png")
+  gob3=loadImage("enemy3.png")
+}
+function setup(){
+   createCanvas(1200,500)
+   knight=createSprite(100,300,50,50)
+  knight.addAnimation("lol",knightArmor);
+  knight.addAnimation("lao",knightAttack)
+  time=0
+  point=0
+  goblin=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin.addImage("balst",gob);
+  goblin.velocityX=-5;
+  goblin.scale=0.5;
+  goblin2=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin2.addImage("balst",gob2);
+  goblin2.velocityX=-5;
+  goblin2.scale=0.5;
+  goblin3=createSprite(1250, Math.round(random(20,470)),30,30);
+  goblin3.addImage("balst",gob3);
+  goblin3.velocityX=-5;
+  goblin3.scale=0.5;
+  goblin4=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin4.addImage("balst",gob);
+  goblin4.velocityX=-5;
+  goblin4.scale=0.5;
+  goblin5=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin5.addImage("balst",gob2);
+  goblin5.velocityX=-5;
+  goblin5.scale=0.5;
+  goblin6=createSprite(1250, Math.round(random(20,470)),30,30);
+  goblin6.addImage("balst",gob3);
+  goblin6.velocityX=-5;
+  goblin6.scale=0.5;
+  goblin7=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin7.addImage("balst",gob);
+  goblin7.velocityX=-5;
+  goblin7.scale=0.5;
+  goblin8=createSprite(1250,Math.round(random(20,470)),30,30);
+  goblin8.addImage("balst",gob2);
+  goblin8.velocityX=-5;
+  goblin8.scale=0.5;
+  goblin9=createSprite(1250, Math.round(random(20,470)),30,30);
+  goblin9.addImage("balst",gob3);
+  goblin9.velocityX=-5;
+  goblin9.scale=0.5;
+  gamelol="fire"
+}
+function draw(){
+    background("green")
+    knight.y=mouseY
+    time=time+1
+    if(goblin.x===-30){
+        goblin.x=1250
+        goblin.y=Math.round(random(20,470))
+        point=point-1
+     console.log(point)
+    }
+    if(goblin3.x===-30){
+      goblin3.x=1250
+      goblin3.y=Math.round(random(20,470))
+      point=point-1
+     console.log(point)
+    }
+  if(goblin2.x===-30){
+    goblin2.x=1250
+    goblin2.y=Math.round(random(20,470))
+    point=point-1
+     console.log(point)
+  }
+  if(goblin4.x===-30){
+    goblin4.x=1250
+    goblin4.y=Math.round(random(20,470))
+    point=point-1
+     console.log(point)
+}
+if(goblin5.x===-30){
+  goblin5.x=1250
+  goblin5.y=Math.round(random(20,470))
+  point=point-1
+     console.log(point)
+}
+if(goblin6.x===-30){
+goblin6.x=1250
+goblin6.y=Math.round(random(20,470))
+point=point-1
+     console.log(point)
+}
+if(goblin7.x===-30){
+  goblin7.x=1250
+  goblin7.y=Math.round(random(20,470))
+  point=point-1
+     console.log(point)
+    }
+    if(goblin8.x===-30){
+      goblin8.x=1250
+      goblin8.y=Math.round(random(20,470))
+      point=point-1
+     console.log(point)
+    }
+  if(goblin9.x===-30){
+    goblin9.x=1250
+    goblin9.y=Math.round(random(20,470))
+    point=point-1
+     console.log(point)
+  }
+  if(keyWentDown("space")){
+    magic=createSprite(110,knight.y,30,30)
+    
+   magic.scale=0.1
+   knight.changeAnimation("lao",knightAttack)
+   if(goblin.isTouching(magic)){
+     magic.destroy()
+     goblin.x=1250
+     goblin.y=Math.round(random(20,470))
+     point=point+1
+     console.log(point)
+   }
+   if( goblin2.isTouching(magic)){
+    magic.destroy()
+     goblin2.x=1250
+     goblin2.y=Math.round(random(20,470))
+     point=point+1
+     console.log(point)
+  }
+  if(goblin3.isTouching(magic)){
+    magic.destroy()
+    goblin3.x=1250
+    goblin3.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin4.isTouching(magic)){
+    magic.destroy()
+    goblin4.x=1250
+    goblin4.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin5.isTouching(magic)){
+    magic.destroy()
+    goblin5.x=1250
+    goblin5.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin6.isTouching(magic)){
+    magic.destroy()
+    goblin6.x=1250
+    goblin6.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin7.isTouching(magic)){
+    magic.destroy()
+    goblin7.x=1250
+    goblin7.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin8.isTouching(magic)){
+    magic.destroy()
+    goblin8.x=1250
+    goblin8.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+  if(goblin9.isTouching(magic)){
+    magic.destroy()
+    goblin9.x=1250
+    goblin9.y=Math.round(random(20,470))
+    point=point+1
+     console.log(point)
+  }
+ 
+  }else{
+    if(time%20===0){
+     knight.changeAnimation("lol",knightArmor)
+    }
+    drawSprites();
+}
+}
