@@ -1,7 +1,7 @@
 function preload(){
   knightArmor=loadAnimation("knight.png")
   knightAttack=loadAnimation("knightAttack.png")
-  darkBall=loadImage("projectile.png")
+ 
   gob=loadImage("enemy.png")
   gob2=loadImage("enemy2.png")
   gob3=loadImage("enemy3.png")
